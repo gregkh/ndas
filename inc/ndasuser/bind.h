@@ -1,9 +1,9 @@
 #ifndef _NDASUSER_BIND_H_
 #define _NDASUSER_BIND_H_
 
-#include <sal/types.h>
-#include <ndasuser/ndaserr.h>
-#include <ndasuser/def.h>
+#include "../sal/types.h"
+#include "ndaserr.h"
+#include "def.h"
 /*
  * The raid related information of the slot.
  */

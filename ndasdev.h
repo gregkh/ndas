@@ -34,9 +34,9 @@
 
 #include <linux/socket.h>
 #include "ndas_id.h"
-#include "ndasuser/ndaserr.h"
-#include "ndasuser/info.h"
-#include "sal/types.h"
+#include "inc/ndasuser/ndaserr.h"
+#include "inc/ndasuser/info.h"
+#include "inc/sal/types.h"
 
 #ifdef __KERNEL__
 #include "linux_ver.h"

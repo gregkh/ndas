@@ -32,7 +32,7 @@
 #ifndef _SAL_DEBUG_H_
 #define _SAL_DEBUG_H_
 
-#include "sal/sal.h"
+#include "sal.h"
 
 #if defined(LINUXUM) || defined(PS2DEV)
 #ifdef DEBUG
@@ -86,7 +86,7 @@ int sal_error_print(char* fmt, ...) __attribute__ ((format (printf, 1, 2)));
 #endif /* DEBUG */
 
 #elif defined(LINUX)
-#include "sal/linux/debug.h"
+#include "linux/debug.h"
 #endif /* defined(LINUXUM) || defined(PS2DEV) || defined(LINUX) */
 
 #ifdef SYABAS

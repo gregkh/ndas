@@ -1,6 +1,6 @@
 /*
  -------------------------------------------------------------------------
- Copyright (C) 2011, IOCELL Networks Corp. Plainsboro, NJ, USA.
+ Copyright (c) 2012 IOCELL Networks, Plainsboro, NJ, USA.
  All rights reserved.
 
  LICENSE TERMS
@@ -29,26 +29,38 @@
  and fitness for purpose.
  -------------------------------------------------------------------------
 */
-#ifndef _NDASUSER_PERSIST_H_
-#define _NDASUSER_PERSIST_H_
+#ifndef _LINUX_BLOCK_OPS_H_
+#define _LINUX_BLOCK_OPS_H_
 
-#include "ndaserr.h"
-#include "def.h"
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,28))
+int ndop_open(struct block_device *bdev, fmode_t mode);
 
-/* 
- * Fetch the registration data of registered NDAS devices.
- * Please note that the data allocated by the function in 'data' pointer
- * should be freed by calling sal_free() function
- */
-NDASUSER_API ndas_error_t 
-ndas_get_registration_data(char** data, int* size);
+int ndop_release(struct gendisk *disk, fmode_t mode);
 
-/*
- * Restore the registration data of NDAS devices.
- * Please note the memory passed via 'data' will be freed inside the function
- */
-NDASUSER_API ndas_error_t 
-ndas_set_registration_data(char *data, int size);
+int ndop_ioctl(struct block_device *bdev, fmode_t mode,
+                  unsigned int cmd, unsigned long arg);
+#else
+int ndop_open(struct inode *inode, struct file *filp);
 
-#endif //_NDASUSER_PERSIST_H_
+int ndop_release(struct inode *inode, struct file *filp);
 
+int ndop_ioctl(struct inode *inode, struct file *filp,
+                  unsigned int cmd, unsigned long arg);
+#endif
+
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,5,0)) // 2.5.x or above
+int ndop_media_changed(struct gendisk *);
+
+int ndop_revalidate_disk(struct gendisk *);
+#else
+int ndop_check_netdisk_change(kdev_t rdev);
+
+int ndop_revalidate(kdev_t rdev);
+#endif
+
+extern struct block_device_operations ndas_fops;
+extern struct ndas_slot* g_ndas_dev[];
+#define NDAS_GET_SLOT_DEV(slot) (g_ndas_dev[(slot) - NDAS_FIRST_SLOT_NR])
+#define NDAS_SET_SLOT_DEV(slot, dev)   do { g_ndas_dev[slot - NDAS_FIRST_SLOT_NR] = dev; } while(0)
+
+#endif // _LINUX_BLOCK_OPS_H_
