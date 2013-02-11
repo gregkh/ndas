@@ -32,7 +32,7 @@
 #ifndef _SAL_SYS_LIBC_H_ 
 #define _SAL_SYS_LIBC_H_
 
-#include "sal/sal.h"
+#include "../sal.h"
 
 /* String functions from newlib */
 

@@ -40,7 +40,7 @@
 #include <string.h>
 #include <ctype.h>
 #else // LINUX kernel mode
-#include "sal/linux/libc.h"
+#include "linux/libc.h"
 #endif // LINUX kernel mode
 #endif // LINUX
 

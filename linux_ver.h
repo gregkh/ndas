@@ -39,7 +39,7 @@
 #include <linux/version.h>
 #include <linux/module.h> // module_put/get for 2.6, MOD_INC/DEC_USE_COUNT for 2.4
 #include <linux/slab.h>
-#include "sal/libc.h"
+#include "inc/sal/libc.h"
 
 #define LINUX_VERSION_25_ABOVE (LINUX_VERSION_CODE >= KERNEL_VERSION(2,5,0))
 #define LINUX_VERSION_23_ABOVE (LINUX_VERSION_CODE >= KERNEL_VERSION(2,3,0))
