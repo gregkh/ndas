@@ -32,12 +32,12 @@
 #include "linux_ver.h" 
 #include <asm/uaccess.h> // VERIFY_WRITE
 
-#include <sal/debug.h>
-#include <sal/types.h>
-#include <sal/sync.h>
-#include <sal/libc.h>
-#include <ndasuser/ndasuser.h>
-#include <ndasuser/write.h>
+#include "inc/sal/debug.h"
+#include "inc/sal/types.h"
+#include "inc/sal/sync.h"
+#include "inc/sal/libc.h"
+#include "inc/ndasuser/ndasuser.h"
+#include "inc/ndasuser/write.h"
 
 #include "block.h"
 #include "ops.h"
@@ -285,8 +285,8 @@ ndas_error_t slot_enable(int s)
 		#ifndef NDAS_DONT_CARE_SCHEDULER
 			#if LINUX_VERSION_AVOID_CFQ_SCHEDULER
 				#if CONFIG_SYSFS
-				    sal_assert(slot->queue->kobj.ktype);	
-				    sal_assert(slot->queue->kobj.ktype->default_attrs);
+//				    sal_assert(slot->queue->kobj.ktype);	
+//				    sal_assert(slot->queue->kobj.ktype->default_attrs);
 				    {
 				        struct queue_sysfs_entry {
 				        	struct attribute attr;

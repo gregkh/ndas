@@ -32,8 +32,8 @@
 #ifndef _NDASUSER_WRITE_H_
 #define _NDASUSER_WRITE_H_
 
-#include <ndasuser/ndaserr.h>
-#include <ndasuser/def.h>
+#include "ndaserr.h"
+#include "def.h"
 
 #endif // _NDASUSER_WRITE_H_
 

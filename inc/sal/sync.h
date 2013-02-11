@@ -36,8 +36,8 @@
 
 #ifndef _SAL_SYNC_H
 #define _SAL_SYNC_H
-#include "sal/sal.h"
-#include "sal/time.h"
+#include "sal.h"
+#include "time.h"
 
 #define SAL_SYNC_FOREVER    (-1)
 #define SAL_SYNC_NOWAIT        0

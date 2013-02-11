@@ -57,12 +57,12 @@
 #endif
 #endif
 
-#include <sal/debug.h>
-#include <sal/types.h>
-#include <sal/sync.h>
-#include <sal/libc.h>
-#include <ndasuser/ndasuser.h>
-#include <ndasuser/write.h>
+#include "inc/sal/debug.h"
+#include "inc/sal/types.h"
+#include "inc/sal/sync.h"
+#include "inc/sal/libc.h"
+#include "inc/ndasuser/ndasuser.h"
+#include "inc/ndasuser/write.h"
 
 #ifdef XPLAT_XIXFS_EVENT
 #include <xixfsevent/xixfs_event.h>

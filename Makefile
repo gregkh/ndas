@@ -1,4 +1,4 @@
-ndas_block-y	:= ndas_block_main.o procfs.o
+ndas_block-y	:= ndas_block_main.o procfs.o ops.o ctrldev.o
 
 obj-m	:= ndas_block.o
 
