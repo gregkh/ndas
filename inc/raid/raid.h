@@ -1,10 +1,10 @@
 #ifndef _RAID_RAID_H_
 #define _RAID_RAID_H_
 
-#include <ndasuser/bind.h>
-#include "netdisk/list.h"
-#include "netdisk/ndasdib.h"
-#include "netdisk/sdev.h"
+#include "../ndasuser/bind.h"
+#include "../netdisk/list.h"
+#include "../netdisk/ndasdib.h"
+#include "../netdisk/sdev.h"
 
 #define U64_ABS(x,y) (((x)>(y))?((x)-(y)):((y)-(x)))
 

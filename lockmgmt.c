@@ -4,13 +4,14 @@
 */
 #ifndef NDAS_NO_LANSCSI
 
-#include "xplatcfg.h"
-#include <sal/types.h>
-#include <ndasuser/ndasuser.h>
-#include <sal/debug.h>
+#include "linux_ver.h"
+#include "inc/xplatcfg.h"
+#include "inc/sal/types.h"
+#include "inc/ndasuser/ndasuser.h"
+#include "inc/sal/debug.h"
 #include "lockmgmt.h"
-#include "lspx/lsp.h"
-#include "netdisk/conn.h"
+#include "inc/lspx/lsp.h"
+#include "inc/netdisk/conn.h"
 #include "udev.h"
 
 #define DEBUG_LEVEL_LOCK 1

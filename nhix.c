@@ -1,14 +1,15 @@
-#include "xplatcfg.h"
-#include <sal/libc.h>
-#include <sal/sync.h>
-#include <sal/time.h>
-#include <xlib/gtypes.h> // g_ntohl g_htonl g_ntohs g_htons
-#include "lpx/lpx.h"
-#include "lpx/lpxutil.h"
-#include "netdisk/ndashix.h"
-#include "netdisk/list.h"
-#include "netdisk/ndev.h"
-#include "netdisk/sdev.h"
+#include "linux_ver.h"
+#include "inc/xplatcfg.h"
+#include "inc/sal/libc.h"
+#include "inc/sal/sync.h"
+#include "inc/sal/time.h"
+#include "inc/xlib/gtypes.h" // g_ntohl g_htonl g_ntohs g_hton
+#include "inc/lpx/lpx.h"
+#include "inc/lpx/lpxutil.h"
+#include "inc/netdisk/ndashix.h"
+#include "inc/netdisk/list.h"
+#include "inc/netdisk/ndev.h"
+#include "inc/netdisk/sdev.h"
 #include "registrar.h"
 #include "nhix.h"
 #include "uuid.h"
@@ -24,7 +25,7 @@
 #define HIX_HOSTINFO_LIFE (300 * SAL_TICKS_PER_SEC)
 
 #ifdef DEBUG
-#include "sal/debug.h"
+#include "inc/sal/debug.h"
 #define    debug_hix(l, x...)    \
 do {\
     if(l <= DEBUG_LEVEL_HIX ) {     \

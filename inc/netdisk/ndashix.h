@@ -37,7 +37,7 @@
 #ifndef _NDAS_HIX_H_
 #define _NDAS_HIX_H_
 
-#include "sal/types.h"
+#include "../sal/types.h"
 
 //
 // LPX Datagram
