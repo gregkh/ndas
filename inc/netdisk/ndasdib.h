@@ -1,7 +1,7 @@
 #ifndef _NDAS_DIB_H_
 #define _NDAS_DIB_H_
 
-#include <sal/types.h>
+#include "../sal/types.h"
 //
 //    disk information format
 //

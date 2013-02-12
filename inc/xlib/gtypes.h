@@ -27,7 +27,7 @@
 #ifndef __G_TYPES_H__
 #define __G_TYPES_H__
 
-#include <glibconfig.h>
+#include "../glibconfig.h"
 
 G_BEGIN_DECLS
 

@@ -1,10 +1,10 @@
 #ifndef _NDDEV_NETDISK_H_
 #define _NDDEV_NETDISK_H_
 
-#include "sal/types.h"
-#include "ndasuser/info.h"
-#include "ndasuser/ndaserr.h"
-#include "ndasuser/io.h"
+#include "../sal/types.h"
+#include "../ndasuser/info.h"
+#include "../ndasuser/ndaserr.h"
+#include "../ndasuser/io.h"
 
 #define ND_SECTOR_SIZE            512
 

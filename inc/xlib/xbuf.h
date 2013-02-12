@@ -5,12 +5,12 @@
     Reduced version based on sk_buff and optimized for LPX protocol
 */    
 
-#include "sal/debug.h" // sal_assert
-#include "sal/sync.h"
-#include "sal/types.h"
-#include "sal/net.h"
-#include "sal/mem.h" // struct sal_mem_block
-#include "sal/libc.h"
+#include "../sal/debug.h" // sal_assert
+#include "../sal/sync.h"
+#include "../sal/types.h"
+#include "../sal/net.h"
+#include "../sal/mem.h" // struct sal_mem_block
+#include "../sal/libc.h"
 
 #define XBUF_MAX_NETWORK_HEADER_SIZE 16
 
@@ -125,7 +125,7 @@ xbuf_get_netbuf_seg(
 //    sal_debug_print("xbuf_get_netbuf_seg: nr_data_segs=%d", (int)xb->nr_data_segs);
     bufs->nr_data_segs = xb->nr_data_segs;
     if (bufs->nr_data_segs) {
-        sal_assert(xb->nr_data_segs <= SAL_NET_MAX_BUF_SEG_COUNT);
+//        sal_assert(xb->nr_data_segs <= SAL_NET_MAX_BUF_SEG_COUNT);
         sal_memcpy(
             bufs->data_segs,
             xb->data_segs,
@@ -141,7 +141,7 @@ static
 inline
 void xbuf_set_sys_netbuf_rebuild(struct xbuf *xb)
 {
-    sal_assert(xb->sys_buf); // Only when system network buffer is vaild.
+//    sal_assert(xb->sys_buf); // Only when system network buffer is vaild.
     xb->xbuf_flags |= XBUF_FLAG_SYS_NETBUF_REBUILD;
 }
 
@@ -228,8 +228,8 @@ xbuf_set_destruct_handler(
     xbuf_destruct_handler destruct_handler,
     void * userdata)
 {
-    sal_assert(xb->destruct_handler == NULL);
-    sal_assert(xb->handler_userdata == NULL);
+//    sal_assert(xb->destruct_handler == NULL);
+//    sal_assert(xb->handler_userdata == NULL);
 
     xb->destruct_handler = destruct_handler;
     xb->handler_userdata = userdata;
@@ -299,7 +299,7 @@ _xbuf_queue_tail(
 {
     struct xbuf *prev, *next;
 
-    sal_assert(list && xb);
+//    sal_assert(list && xb);
     xb->queue = list;
     if ( list->qlen == 0 && (list->flags & XBUFQ_FLAG_AVAIL_EVENT)) {
         sal_event_set(list->avail);
@@ -324,11 +324,11 @@ _xbuf_dequeue(
 ){
     struct xbuf *next, *head, *result;
 
-    sal_assert(list != NULL);
+    //sal_assert(list != NULL);
 
     head = (struct xbuf *)list;
     next = head->next;
-    sal_assert(next != NULL);
+    //sal_assert(next != NULL);
     if (next != head) {
         // Get the first entry.
         result = next;
@@ -366,7 +366,7 @@ _xbuf_unlink(struct xbuf * xb)
     struct xbuf_queue *list;
 
     list = xb->queue;
-    sal_assert(list);
+    //sal_assert(list);
     xb->queue = NULL;
     list->qlen--;
 

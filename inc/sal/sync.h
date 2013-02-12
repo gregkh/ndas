@@ -62,6 +62,7 @@ typedef struct { volatile int counter; } sal_atomic;
 #define sal_atomic_read(x)                ((x)->counter)
 #define sal_atomic_init(v)      {v}
 
+#define XPLAT_ALLOW_LINUX_HEADER 1
 #if defined(XPLAT_ALLOW_LINUX_HEADER)
 
 #elif defined(UCOSII)

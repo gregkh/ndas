@@ -1,9 +1,9 @@
 #ifndef __NETDISK__NETDISKID__H__
 #define __NETDISK__NETDISKID__H__
 
-#include <sal/libc.h>
-#include <ndasuser/def.h>
-#include <ndasuser/ndaserr.h>
+#include "../sal/libc.h"
+#include "../ndasuser/def.h"
+#include "../ndasuser/ndaserr.h"
 
 //
 //    keys for XiMeta NetDisk ID V1

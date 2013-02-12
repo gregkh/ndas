@@ -5,13 +5,13 @@
 
 #include "lsp_type.h"
 
-#if	  defined(__LITTLE_ENDIAN__)
-
-#elif defined(__BIG_ENDIAN__)
-
-#else
-#error "byte endian is not specified"
-#endif 
+//#if	  defined(__LITTLE_ENDIAN__)
+//
+//#elif defined(__BIG_ENDIAN__)
+//
+//#else
+//#error "byte endian is not specified"
+//#endif 
 
 #ifdef __cplusplus
 extern "C" {

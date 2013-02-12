@@ -32,7 +32,7 @@
 #ifndef _SAL_THREAD_H_
 #define _SAL_THREAD_H_
 
-#include "sal/sal.h"
+#include "sal.h"
 
 typedef void* sal_thread_id;
 typedef void* (sal_thread_func)(void*);

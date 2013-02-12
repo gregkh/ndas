@@ -7,9 +7,9 @@
 #ifndef _LPX_LPX_H_
 #define _LPX_LPX_H_
 
-#include "sal/sal.h" /* NDAS_SAL_API */
-#include "sal/net.h"
-#include "ndasuser/ndaserr.h"
+#include "../sal/sal.h" /* NDAS_SAL_API */
+#include "../sal/net.h"
+#include "../ndasuser/ndaserr.h"
 
 #define ETH_P_LPX    0x88ad
 #define LPX_NODE_LEN    6

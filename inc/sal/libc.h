@@ -73,6 +73,7 @@ extern int snprintf(char* buffer, size_t count, const char* format, ...);
 
 #if defined(LINUX) && !defined(LINUXUM)
 
+#define XPLAT_ALLOW_LINUX_HEADER	1
 #ifdef XPLAT_ALLOW_LINUX_HEADER
 
 #define sal_memset memset

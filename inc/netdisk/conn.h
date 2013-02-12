@@ -1,13 +1,13 @@
 #ifndef _NETDISK_CONN_H_
 #define _NETDISK_CONN_H_
 
-#include <sal/types.h>
-#include <sal/time.h>
-#include <lpx/lpxutil.h>
-#include "ndasuser/ndasuser.h"
-#include "netdisk/ndasdib.h"
-#include <lspx/lsp_type.h>
-#include <lspx/lsp.h>
+#include "../sal/types.h"
+#include "../sal/time.h"
+#include "../lpx/lpxutil.h"
+#include "../ndasuser/ndasuser.h"
+#include "../netdisk/ndasdib.h"
+#include "../lspx/lsp_type.h"
+#include "../lspx/lsp.h"
 #ifdef XPLAT_RAID
 #include "raid/bitmap.h"
 #endif

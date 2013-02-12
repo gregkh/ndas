@@ -1,24 +1,24 @@
 #ifndef _NDDEV_NDDEV_H_
 #define _NDDEV_NDDEV_H_
 
-#include <sal/thread.h>
-#include <sal/time.h>
-#include <sal/sync.h>
-#include <sal/mem.h>
+#include "../sal/thread.h"
+#include "../sal/time.h"
+#include "../sal/sync.h"
+#include "../sal/mem.h"
 
-#include <netdisk/netdisk.h>
-#include <ndasuser/ndasuser.h>
-#include <ndasuser/ndaserr.h>
-#include "xlib/dpc.h"
-#include "xlib/xbuf.h"
+#include "../netdisk/netdisk.h"
+#include "../ndasuser/ndasuser.h"
+#include "../ndasuser/ndaserr.h"
+#include "../xlib/dpc.h"
+#include "../xlib/xbuf.h"
 
 
-#include "netdisk/list.h"
+#include "../netdisk/list.h"
 
-#include "lpx/lpxutil.h"
+#include "../lpx/lpxutil.h"
 
-#include "lspx/lsp_util.h"
-#include "netdisk/conn.h"
+#include "../lspx/lsp_util.h"
+#include "../netdisk/conn.h"
 
 #define NDDEV_LPX_PORT_NUMBER                10000
 #define NDDEV_LPX_PORT_NUMBER_PNP            10002

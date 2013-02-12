@@ -31,8 +31,8 @@
 */
 #ifndef _SAL_NET_H_
 #define _SAL_NET_H_
-#include "sal/sal.h"
-#include "sal/mem.h" /* sal_mem_block */
+#include "sal.h"
+#include "mem.h" /* sal_mem_block */
 #ifdef LINUXUM
 #include <netinet/in.h>
 #endif
@@ -77,9 +77,9 @@
 #endif /* __LITTLE_ENDIAN_BYTEORDER */
 #endif /* XPLAT_BUILTIN_NETWORK_BYTE_UTIL */
 
-#include "sal/time.h"
-#include "sal/types.h"
-#include "sal/mem.h"
+#include "time.h"
+#include "types.h"
+#include "mem.h"
 
 typedef void* sal_netdev_desc;
 

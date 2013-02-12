@@ -1,7 +1,7 @@
 #ifndef _XLIB_XHASH_H_
 #define _XLIB_XHASH_H_
 
-#include "sal/types.h"
+#include "../sal/types.h"
 
 typedef xuint32        (*XlibHashFunc)(void* key);
 typedef xbool        (*XlibEqualFunc)(void* a, void* b);

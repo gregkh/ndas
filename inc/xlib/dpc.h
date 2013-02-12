@@ -1,8 +1,8 @@
 #ifndef _XLIB_DPC_H
 #define _XLIB_DPC_H
 
-#include <sal/time.h>
-#include <sal/sync.h>
+#include "../sal/time.h"
+#include "../sal/sync.h"
 
 #define DPC_INVALID_ID ((dpc_id)0)
 

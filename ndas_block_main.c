@@ -32,6 +32,7 @@
 #include <linux/module.h> // EXPORT_NO_SYMBOLS, MODULE_LICENSE
 #include <linux/version.h> // LINUX_VERSION_CODE, KERNEL_VERSION
 #include <linux/init.h> // module_init, module_exit
+#include "linux_ver.h"
 #include "inc/ndasuser/ndasuser.h"
 #include "inc/sal/sal.h"
 #include "procfs.h"

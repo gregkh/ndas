@@ -7,7 +7,7 @@
 
 /* For embedded system, inline function */
 
-#include <linux/config.h>
+//#include <linux/config.h>
 #include <linux/version.h>
 #include <linux/sched.h> /* for HZ, jiffies */
 #include <linux/slab.h> /* for malloc */

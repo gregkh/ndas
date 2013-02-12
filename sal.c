@@ -1,6 +1,6 @@
 /*
  -------------------------------------------------------------------------
- Copyright (C) 2011, IOCELL Networks Corp. Plainsboro, NJ, USA.
+ Copyright (c) 2012 IOCELL Networks, Plainsboro, NJ, USA.
  All rights reserved.
 
  LICENSE TERMS
@@ -19,7 +19,7 @@
       built using this software without specific written permission. 
       
  ALTERNATIVELY, provided that this notice is retained in full, this product
- may be distributed under the terms of the GNU General Public License (GPL),
+ may be distributed under the terms of the GNU General Public License (GPL v2),
  in which case the provisions of the GPL apply INSTEAD OF those given above.
  
  DISCLAIMER
@@ -29,18 +29,48 @@
  and fitness for purpose.
  -------------------------------------------------------------------------
 */
-#ifndef _SAL_SYS_GENERIC_SAL_H_
-#define _SAL_SYS_GENERIC_SAL_H_
+#include <linux/uts.h> //  UTS_NODENAME
+#include <linux/kernel.h>
+#include <linux/module.h> // EXPORT_SYMBOL
+#include <linux/string.h>
+#include "linux_ver.h"
+#include "inc/sal/sal.h"
+#include "inc/sal/net.h"
+#include "inc/sal/debug.h"
+#include "inc/sal/types.h"
+#include "inc/sal/time.h"
+#include "inc/sal/mem.h"
 
-/* SAL API attribute modifier */
-#if (__GNUC__ > 3 || __GNUC__ == 3 ) && defined(_X86)
-#define NDAS_CALL __attribute__((regparm(3)))
-#else
-#define NDAS_CALL
-#endif
+NDAS_SAL_API
+void sal_init(void)
+{
+    sal_net_init();
+}
+EXPORT_SYMBOL(sal_init);
 
-//#if defined(XPLAT_EMBEDDED)
-#include "emb.h"
-//#endif  /* _MIPSEL */
+extern NDAS_SAL_API void sal_mem_display(int verbose);
+NDAS_SAL_API
+void sal_cleanup(void)
+{
+    sal_net_cleanup();
+//    sal_mem_display(2);
+}
+EXPORT_SYMBOL(sal_cleanup);
 
-#endif /* _SAL_SYS_GENERIC_SAL_H_ */
+NDAS_SAL_API ndas_error_t sal_gethostname(char* name, int size)
+{
+    int i;
+    ndas_error_t err = NDAS_OK;
+
+    if (size <= 0)
+        return NDAS_ERROR_INVALID_PARAMETER;
+    i = strlen(UTS_NODENAME);
+    if (i >= size) {
+        i = size - 1;
+        name[i] = 0;
+    }
+    memcpy(name, UTS_NODENAME, i);
+    return err;
+}
+EXPORT_SYMBOL(sal_gethostname);
+

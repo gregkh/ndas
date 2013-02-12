@@ -34,6 +34,7 @@
 #include <linux/module.h>
 #include <linux/errno.h>
 #include <asm/uaccess.h>
+#include "linux_ver.h"
 #include "inc/ndasuser/ndasuser.h"
 #include "inc/ndasuser/persist.h"
 #include "inc/ndasuser/bind.h"

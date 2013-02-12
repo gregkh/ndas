@@ -11,19 +11,19 @@
 #ifndef _LPX_LPXUTIL_H_
 #define _LPX_LPXUTIL_H_
 
-#include "xplatcfg.h"
-#include "sal/libc.h" // sal_snprintf
-#include "sal/types.h"
-#include "sal/net.h" // sal_sock
-#include "sal/time.h" // sal_msec
-#include "sal/net.h" // sal_msec
-#include "sal/debug.h" // sal_snprintf
-#include "sal/sync.h" // sal_spinlock
-#include "lpx/lpx.h"
-#include "ndasuser/ndaserr.h"
-#include "xlib/dpc.h"
-#include "xlib/xbuf.h"
-#include "netdisk/list.h"
+#include "../xplatcfg.h"
+#include "../sal/libc.h" // sal_snprintf
+#include "../sal/types.h"
+#include "../sal/net.h" // sal_sock
+#include "../sal/time.h" // sal_msec
+#include "../sal/net.h" // sal_msec
+#include "../sal/debug.h" // sal_snprintf
+#include "../sal/sync.h" // sal_spinlock
+#include "lpx.h"
+#include "../ndasuser/ndaserr.h"
+#include "../xlib/dpc.h"
+#include "../xlib/xbuf.h"
+#include "../netdisk/list.h"
 
 #define PORT_HASH    16
 
@@ -594,13 +594,13 @@ _lpx_complete_aio_datalen(
     sal_debug_println("aio(%p fd=%d len=%d comp=%d err=%d ret=%d) len=%d ret=%d",
         aio, aio->sockfd, aio->len, aio->completed_len, aio->error_len, aio->returncode, datalen, returncode);
 #endif
-    sal_assert(aio->len >= aio->completed_len + aio->error_len);
+    //sal_assert(aio->len >= aio->completed_len + aio->error_len);
     if(aio->len == aio->completed_len + aio->error_len) {
         sal_event comp_event = aio->comp_event;
 
         completed = 1;
 
-        sal_assert((aio->aio_flags & LPXAIO_FLAG_COMPLETED) == 0);
+        //sal_assert((aio->aio_flags & LPXAIO_FLAG_COMPLETED) == 0);
         aio->aio_flags |= LPXAIO_FLAG_COMPLETED;
 
         if(aio->aio_complete) {
@@ -611,7 +611,7 @@ _lpx_complete_aio_datalen(
         if(comp_event) {
             sal_event_set(comp_event);
        }
-#if 1
+#if 0
     sal_debug_println("aio(%p fd=%d len=%d comp=%d err=%d ret=%d) len=%d ret=%d",
         aio, aio->sockfd, aio->len, aio->completed_len, aio->error_len, aio->returncode, datalen, returncode);
 #endif		
@@ -658,7 +658,7 @@ lpx_complete_aio_leftover(
     ndas_error_t returncode
 );
 
-#include "lpx/debug.h" 
+#include "debug.h" 
 
 ndas_error_t lpx_init(int transfer_unit);
 

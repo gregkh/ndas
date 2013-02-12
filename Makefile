@@ -1,4 +1,8 @@
-ndas_block-y	:= ndas_block_main.o procfs.o ops.o ctrldev.o
+ndas_block-y	:= ndas_block_main.o procfs.o ops.o	\
+			ctrldev.o block26.o ndasuser.o 	\
+			lpxproto.o serial.o des.o crc.o	\
+			sal.o sal_net.o sal_mem.o sal_sync.o \
+			xbuf.o
 
 obj-m	:= ndas_block.o
 

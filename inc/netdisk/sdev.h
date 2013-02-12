@@ -1,16 +1,17 @@
 #ifndef _NETDISK_SDEV_H_
 #define _NETDISK_SDEV_H_
 
-#include <sal/types.h>
-#include <sal/sync.h>
-#include <ndasuser/ndasuser.h>
-#include <ndasuser/ndaserr.h>
-#include <ndasuser/def.h>
-#include <ndasuser/info.h>
-#include "../netdisk/udev.h" /* to do: move raid code to 
+#include "../sal/types.h"
+#include "../sal/sal.h"
+#include "../sal/sync.h"
+#include "../ndasuser/ndasuser.h"
+#include "../ndasuser/ndaserr.h"
+#include "../ndasuser/def.h"
+#include "../ndasuser/info.h"
+#include "../../udev.h" /* to do: move raid code to 
 netdisk and move all netdisk header to source dir */
-#include "netdisk/ndev.h"
-#include "netdisk/ndasdib.h"
+#include "../netdisk/ndev.h"
+#include "../netdisk/ndasdib.h"
 #ifdef XPLAT_RAID
 #include "raid/bitmap.h"
 #endif

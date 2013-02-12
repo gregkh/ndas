@@ -34,13 +34,13 @@
 
 #include "../ndasuser/ndaserr.h"
 
-#if defined(LINUX) && !defined(LINUXUM)
+//#if defined(LINUX) && !defined(LINUXUM)
 #include "linux/sal.h"
-#elif defined(UCOSII)
-#include "ucosii/sal.h"
-#else
-#include "generic/sal.h"
-#endif
+//#elif defined(UCOSII)
+//#include "ucosii/sal.h"
+//#else
+//#include "generic/sal.h"
+//#endif
 
 #define NDAS_SAL_API NDAS_CALL
 /**

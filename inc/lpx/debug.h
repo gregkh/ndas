@@ -2,7 +2,7 @@
 #define _LPX_DEBUG_H_
 /* only included by lpxutil.h */
 
-#include "xlib/gtypes.h"
+#include "../xlib/gtypes.h"
 
 #ifdef DEBUG
 /* type check */

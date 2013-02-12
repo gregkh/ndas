@@ -29,14 +29,14 @@
  and fitness for purpose.
  -------------------------------------------------------------------------
 */
-#include <linux_ver.h>
+#include "linux_ver.h"
 #if LINUX_VERSION_25_ABOVE
 #include <linux/module.h> // THIS_MODULE
-#include <ndasuser/ndasuser.h>
-#include <ndasuser/io.h>
-#include <sal/debug.h>
-#include <ndasdev.h>
-#include <procfs.h>
+#include "inc/ndasuser/ndasuser.h"
+#include "inc/ndasuser/io.h"
+#include "inc/sal/debug.h"
+#include "ndasdev.h"
+#include "procfs.h"
 
 #if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,25) )
 #include <linux/ide.h>

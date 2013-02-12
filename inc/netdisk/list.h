@@ -1,5 +1,6 @@
 #ifndef _NDDEV_LIST_H
 #define _NDDEV_LIST_H
+#define XPLAT_ALLOW_LINUX_HEADER	1
 #if defined(LINUX) && defined(XPLAT_ALLOW_LINUX_HEADER)
 #include <linux/list.h>
 #else
