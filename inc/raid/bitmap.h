@@ -1,7 +1,9 @@
 #ifndef _BIND_BITMAP_H_
 #define _BIND_BITMAP_H_
 
-#include <netdisk/list.h>
+#include "../netdisk/list.h"
+
+#if 0
 
 #define BITMAP_CHUNK_SIZE (4*1024)
 
@@ -110,5 +112,6 @@ xuint64 bitmap_first_set_index(bitmap_t* bitmap)
             
     return 0xffffffffffffffffULL;
 }
+#endif
 
 #endif //_BIND_BITMAP_H_

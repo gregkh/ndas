@@ -1,18 +1,20 @@
 #ifndef NDAS_NO_LANSCSI
-#include "xplatcfg.h"
-#include <sal/types.h>
-#include <sal/libc.h>
-#include <sal/debug.h>
-#include <sal/time.h>
-#include <xlib/xhash.h>
 
-#include "netdisk/ndev.h"
+#include "linux_ver.h"
+#include "inc/xplatcfg.h"
+#include "inc/sal/types.h"
+#include "inc/sal/libc.h"
+#include "inc/sal/debug.h"
+#include "inc/sal/time.h"
+#include "inc/xlib/xhash.h"
+
+#include "inc/netdisk/ndev.h"
 #include "registrar.h"
 #include "ndpnp.h"
 #include "des.h"
-#include "netdisk/sdev.h"
-#include "netdisk/serial.h"
-#include "netdisk/netdiskid.h"
+#include "inc/netdisk/sdev.h"
+#include "inc/netdisk/serial.h"
+#include "inc/netdisk/netdiskid.h"
 
 #ifdef DEBUG
 #define    debug_registrar(l, x...)    \

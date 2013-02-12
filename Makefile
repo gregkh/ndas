@@ -1,10 +1,12 @@
 ndas_block-y	:= ndas_block_main.o procfs.o ops.o	\
 			ctrldev.o block26.o ndasuser.o 	\
 			lpxproto.o serial.o des.o crc.o	\
-			sal.o sal_net.o sal_mem.o sal_sync.o \
-			xbuf.o
+			xbuf.o des_key.o nddev.o registrar.o
 
-obj-m	:= ndas_block.o
+ndas_sal-y	:=	sal.o sal_net.o sal_mem.o sal_sync.o
+
+
+obj-m	:= ndas_block.o ndas_sal.o
 
 LINUX=1
 

@@ -1,19 +1,21 @@
 /*
     to do: Change udev as unit device not single type logical unit. Need to create single type logical unit device types.
 */
-#include "xplatcfg.h"
-#include <sal/types.h>
-#include <ndasuser/ndasuser.h>
-#include "netdisk/netdiskid.h"
-#include "netdisk/ndasdib.h"
-#include "netdisk/sdev.h"
-#include "raid/bitmap.h"
+#include "linux_ver.h"
+#include "inc/xplatcfg.h"
+#include "inc/sal/types.h"
+#include "inc/xlib/dpc.h"
+#include "inc/ndasuser/ndasuser.h"
+#include "inc/netdisk/netdiskid.h"
+#include "inc/netdisk/ndasdib.h"
+#include "inc/netdisk/sdev.h"
+#include "inc/raid/bitmap.h"
 #include "udev.h"
 #include "ndas_scsi_cmd_fmt.h"
-#include "netdisk/conn.h"
-#include "xlib/gtypes.h"
+#include "inc/netdisk/conn.h"
+#include "inc/xlib/gtypes.h"
 #include "registrar.h"
-#include "netdisk/scrc32.h"
+#include "inc/netdisk/scrc32.h"
 #include "lockmgmt.h"
 
 

@@ -36,6 +36,10 @@
 #ifndef _SAL_LINUX_VER_H_
 #define _SAL_LINUX_VER_H_
 
+#define XPLAT_NDASHIX
+#define XPLAT_BPC
+#define XPLAT_PNP
+
 #include <linux/version.h>
 #include <linux/module.h> // module_put/get for 2.6, MOD_INC/DEC_USE_COUNT for 2.4
 #include <linux/slab.h>
