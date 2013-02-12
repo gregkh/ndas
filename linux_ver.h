@@ -40,6 +40,9 @@
 #define XPLAT_BPC
 #define XPLAT_PNP
 #define XPLAT_SIO
+#define XPLAT_ASYNC_IO
+
+#define __LITTLE_ENDIAN_BYTEORDER
 
 #include <linux/version.h>
 #include <linux/module.h> // module_put/get for 2.6, MOD_INC/DEC_USE_COUNT for 2.4

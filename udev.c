@@ -23,30 +23,30 @@
 
 #define NDAS_SET_ENC_TIMEOUT (15*1000)
 
-#ifdef DEBUG
-#define    debug_ndiod(l, x...)    do {\
-    if(l <= DEBUG_LEVEL_NDIOD) {      \
-        sal_debug_print("NDIOD|%d|%s|",l,__FUNCTION__); \
-        sal_debug_println(x); \
-    }    \
-} while(0)
-#define    debug_udev(l, x...)    do {\
-    if(l <= DEBUG_LEVEL_UDEV) {     \
-        sal_debug_print("UD|%d|%s|",l,__FUNCTION__); \
-        sal_debug_println(x);    \
-    } \
-} while(0)    
-#define    debug_tir(l, x...)    do {\
-    if(l <= DEBUG_LEVEL_TIR) {     \
-        sal_debug_print("TR|%d|%s|",l,__FUNCTION__); \
-        sal_debug_println(x);    \
-    } \
-} while(0)    
-#else
+//#ifdef DEBUG
+//#define    debug_ndiod(l, x...)    do {\
+//    if(l <= DEBUG_LEVEL_NDIOD) {      \
+//        sal_debug_print("NDIOD|%d|%s|",l,__FUNCTION__); \
+//        sal_debug_println(x); \
+//    }    \
+//} while(0)
+//#define    debug_udev(l, x...)    do {\
+//    if(l <= DEBUG_LEVEL_UDEV) {     \
+//        sal_debug_print("UD|%d|%s|",l,__FUNCTION__); \
+//        sal_debug_println(x);    \
+//    } \
+//} while(0)    
+//#define    debug_tir(l, x...)    do {\
+//    if(l <= DEBUG_LEVEL_TIR) {     \
+//        sal_debug_print("TR|%d|%s|",l,__FUNCTION__); \
+//        sal_debug_println(x);    \
+//    } \
+//} while(0)    
+//#else
 #define    debug_ndiod(l, x...)    do {} while(0)
 #define    debug_udev(l, x...)    do {} while(0)
 #define    debug_tir(l, x...)    do {} while(0)
-#endif
+//#endif
 
 #define MEMORY_FREE(ptr) if ( ptr ) { sal_free(ptr); ptr = NULL; }
 
@@ -4166,21 +4166,20 @@ ndas_error_t ndas_io_ata_process(logunit_t * l_udev, ndas_io_request * req)
 			xuint32 logicalBlockAddress = 0;
 			xuint32 blockSize = 0;
 
-			debug_udev(1, "call SCSIOP_READ_CAPACITY");	
+			debug_udev(1, "call SCSIOP_READ_CAPACITY");
 
 			if(s_info->mode == NDAS_DISK_MODE_SINGLE){
 				sectorCount = s_info->sectors - NDAS_BLOCK_SIZE_XAREA;
 			}else {
 				sectorCount = s_info->sectors;
 			}
-			
+
 			logicalBlockAddress = (xuint32)(sectorCount -1);
 
 			if(logicalBlockAddress < 0xffffffff) {
 				REVERSE_BYTES_32(&readCapacityData.LogicalBlockAddress,  &logicalBlockAddress);
 				debug_udev(1, "SCSIOP_READ_CAPACITY blockaddress ORGINAL 0x%x", logicalBlockAddress);
 				debug_udev(1, "SCSIOP_READ_CAPACITY blockaddress 0x%x", readCapacityData.LogicalBlockAddress);
-					
 			}else {
 				readCapacityData.LogicalBlockAddress = 0xffffffff;
 			}

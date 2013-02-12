@@ -4641,7 +4641,7 @@ typedef union _TWO_BYTE {
 	*Destination = *Source; \
 	}
 
-#define REVERSE_BYTES_32(Destination, Source) \
+#define REVERSE_BYTES_32(Destination, Source) { \
 	*Destination = *Source; \
 	}
 
