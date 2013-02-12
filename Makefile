@@ -5,7 +5,8 @@ ndas_block-y	:= ndas_block_main.o procfs.o ops.o	\
 			des_key.o nddev.o registrar.o	\
 			nhix.o conn.o scrc32.o		\
 			lsp.o lsp_hash.o lsp_util.o	\
-			lockmgmt.o sdev.o gen_uuid.o
+			lockmgmt.o sdev.o gen_uuid.o	\
+			ndpnp.o udev.o
 
 #ndas_sal-y	:=	sal.o sal_net.o sal_mem.o sal_sync.o sal_thread.o
 ndas_sal-y	:=	sal.o sal_net.o sal_mem.o sal_sync.o sal_time.o
