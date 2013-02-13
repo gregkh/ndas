@@ -36,8 +36,8 @@
 
 #ifndef _SAL_IO_H
 #define _SAL_IO_H
-#include "sal/sal.h"
-#include "sal/time.h"
+#include "sal.h"
+#include "time.h"
 
 struct _sal_file;
 typedef struct _sal_file* sal_file;
