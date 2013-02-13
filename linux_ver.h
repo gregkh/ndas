@@ -36,6 +36,7 @@
 #ifndef _SAL_LINUX_VER_H_
 #define _SAL_LINUX_VER_H_
 
+#define LINUX
 #define XPLAT_NDASHIX
 #define XPLAT_BPC
 #define XPLAT_PNP
@@ -47,8 +48,6 @@
 #include <linux/version.h>
 #include <linux/module.h> // module_put/get for 2.6, MOD_INC/DEC_USE_COUNT for 2.4
 #include <linux/slab.h>
-#include "inc/sal/libc.h"
-
 #define LINUX_VERSION_25_ABOVE (LINUX_VERSION_CODE >= KERNEL_VERSION(2,5,0))
 #define LINUX_VERSION_23_ABOVE (LINUX_VERSION_CODE >= KERNEL_VERSION(2,3,0))
 #define LINUX_VERSION_NO_SNPRINTF (LINUX_VERSION_CODE < KERNEL_VERSION(2,4,7))
@@ -61,6 +60,8 @@
     As of 2.6.22, sk_buff uses sk_buff_data_t type and provides functions to access each network layer header.
 */
 #define LINUX_VERSION_USE_SK_BUFF_DATA_T    (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,22))
+
+#include "inc/sal/libc.h"
 
 /*
  * It was reported that the NDAS driver doesn't work well with CFQ i/o elevation scheduler of 2.6.13 or above kernels.

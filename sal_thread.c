@@ -157,7 +157,7 @@ void sal_thread_daemonize(const char* name, ...)
     va_start(args, name);
     vsnprintf(buffer,SIZE_COMM,name,args);
     va_end(args);
-    daemonize(buffer);
+//    daemonize(buffer);
 #else
     va_start(args, name);
     vsnprintf(current->comm,sizeof(current->comm),name, args);
