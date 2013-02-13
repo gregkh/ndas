@@ -11,12 +11,14 @@ ndas_block-y	:= ndas_block_main.o procfs.o ops.o	\
 ndas_sal-y	:=	sal.o sal_net.o sal_mem.o sal_sync.o	\
 			sal_time.o sal_thread.o sal_debug.o sal_libc.o
 
+# only the first 2 objects are "unique" here, the rest are in ndas_bloc, so
+# should be removed from here as well.
 ndas_core-y	:=	ndas_core_main.o ndemul.o	\
-			ndasuser.o nddev.o udev.o	\
-			ndpnp.o registrar.o scrc32.o xhash.o conn.o	\
-			dpc.o lsp.o lpxproto.o nhix.o lsp_util.o	\
-			lsp_hash.o lockmgmt.o gen_uuid.o xbuf.o		\
-			serial.o des.o des_key.o crc.o raid.o sdev.o
+			ndasuser.o nddev.o udev.o ndpnp.o registrar.o	\
+			scrc32.o xhash.o conn.o	dpc.o lsp.o lpxproto.o	\
+			nhix.o lsp_util.o lsp_hash.o lockmgmt.o		\
+			gen_uuid.o xbuf.o serial.o des.o des_key.o	\
+			crc.o raid.o sdev.o
 
 obj-m	:= ndas_block.o ndas_sal.o ndas_core.o
 
