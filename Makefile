@@ -6,7 +6,7 @@ ndas_block-y	:= ndas_block_main.o procfs.o ops.o	\
 			nhix.o conn.o scrc32.o		\
 			lsp.o lsp_hash.o lsp_util.o	\
 			lockmgmt.o sdev.o gen_uuid.o	\
-			ndpnp.o udev.o
+			ndpnp.o udev.o raid.o
 
 ndas_sal-y	:=	sal.o sal_net.o sal_mem.o sal_sync.o	\
 			sal_time.o sal_thread.o sal_debug.o sal_libc.o
