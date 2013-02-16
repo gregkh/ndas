@@ -74,4 +74,4 @@ NDAS_SAL_API ndas_error_t sal_gethostname(char* name, int size)
 }
 EXPORT_SYMBOL(sal_gethostname);
 
-MODULE_LICENSE("GPLv2");
+MODULE_LICENSE("Dual BSD/GPL");
