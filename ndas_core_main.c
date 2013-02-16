@@ -103,7 +103,7 @@ California and of the United States of America.
 #include "inc/sal/net.h"
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,4,10))
-MODULE_LICENSE("GPLv2, BSD");
+MODULE_LICENSE("Dual BSD/GPL");
 #endif
 MODULE_AUTHOR("IOCELL Networks");
 
